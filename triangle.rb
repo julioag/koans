@@ -15,6 +15,12 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  my_arr = [a,b,c].sort
+  raise TriangleError if my_arr.min <= 0
+  raise TriangleError if my_arr[0] + my_arr[1] <= my_arr[2]
+  return :equilateral if a == b && b == c
+  return :isosceles if a == b || a == c || b == c
+  return :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
